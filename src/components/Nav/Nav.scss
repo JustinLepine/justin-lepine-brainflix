@@ -22,7 +22,6 @@
         
         @include desktop {
             margin: 0 25% 0 0;
-
         }
     }
 
@@ -39,7 +38,6 @@
         @include tablet {
             width: 12rem;
             margin: 2%;
-            // padding: 1rem;
         }
     }
 
@@ -71,7 +69,6 @@
 
         &--tablet {
             visibility: collapse;
-            
 
             @include tablet {
                 visibility: visible;
