@@ -1,3 +1,55 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/mixins' as *;
+
+.description {
+    margin: 4%;
+    color: $brainflix-black;
+
+    &__title {
+        border-bottom: 1px solid $primary-silver;
+        padding-bottom: 0.8rem;
+    }
+    
+    &__container {
+        color: $primary-silver;
+        border-bottom: 1px solid $primary-silver;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__socials {
+        display: flex;
+    }
+
+    &__artist {
+        color: $brainflix-black;
+        font-size: 0.9rem;
+        width: 50%;
+    }
+
+    &__views {
+        width: 50%;
+        color: $primary-silver;
+    }
+    
+    &__dates {
+        width: 50%;
+        color: $primary-silver;
+    }
+    
+    &__likes {
+        width: 50%;
+        color: $primary-silver;
+    }
+
+    &__icons {
+        width: 1.2rem;
+        padding: 0 0.4rem 0.5rem 0;
+    }
+
+    &__text {
+        font-size: 0.82rem;
+        line-height: 1.1rem;
+    }
+}
