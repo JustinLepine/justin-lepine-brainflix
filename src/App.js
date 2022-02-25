@@ -1,6 +1,7 @@
 import Nav from "./components/Nav/Nav.js";
 import Video from "./components/Video/Video.js";
 import Description from "./components/Description/Description.js";
+import Comments from "./components/Comments/Comments.js";
 import "./App.scss";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Nav />
       <Video />
       <Description />
+      <Comments />
     </>
   );
 }

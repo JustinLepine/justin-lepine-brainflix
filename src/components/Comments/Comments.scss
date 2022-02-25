@@ -1,0 +1,83 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixins' as *;
+
+.comment {
+    margin: 4%;
+    margin-bottom: 50rem;
+
+    &__count {
+        color: $brainflix-black;
+        font-size: 0.9rem;
+    }
+
+    &__container {
+        display: flex;
+        border-bottom: 1px solid $primary-silver;
+        padding-bottom: 1rem;
+    }
+
+    &__avatar {
+        width: 2.6rem;
+        height: 2.6rem;
+        margin: 8% 2%;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: 15% 100%;
+        background: $primary-silver;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        // padding: 0 4%;
+    }
+
+    &__subtitle {
+        margin: 0 1.2rem 0.3rem 1rem;
+        font-weight: 400;
+        color: $primary-silver;
+    }
+
+    &__text {
+        width: 80%;
+        background-color: $secondary-mercury;
+        resize: none;
+        border-style: none;
+        border: 1px solid $primary-silver;
+        border-radius: 6px;
+        padding: 1rem;
+        margin: 0 0rem 1rem 1rem;
+        min-height: 5rem; 
+        padding-right: 0;
+    }
+
+    &__button {
+        width: 12rem;
+        margin: 0 6%;
+        padding: 0.6rem 0.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        background-color: $brainflix-blue;
+
+        @include tablet {
+            width: 10rem;
+            margin: 0 3% 0 0;
+        }
+    }
+
+    &__icon {
+        margin-left: 0.3rem;
+        width: 1.4rem;
+    }
+
+    &__upload {
+        width: 90%;
+        text-align: center;
+        text-decoration: none;
+        font-size: 0.78rem;
+        color: $primary-white;
+    }
+}
