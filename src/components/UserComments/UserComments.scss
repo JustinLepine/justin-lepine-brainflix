@@ -21,47 +21,39 @@
         font-weight: 700;
         display: flex;
         border-bottom: 1px solid $primary-silver;
+    }
     
-            // @include tablet {
-            //     margin: 0 10%;
-            // }
-    
-            // @include desktop {
-            //     margin: 0 20%;
-            // }
-        }
-    
-        &__name {
-            width: 50%;
-            display: flex;
-            font-size: 0.8rem;
-            align-items: flex-start;
-            margin-left: 5%;
-            margin-top: 5%;
-            margin-bottom: 0;
-        }
-    
-        &__time {
-            font-size: 0.8rem;
-            color: $primary-silver;
-            width: 45%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-bottom: 0;
-        }
-    
-        &__box {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-        }
-    
-        &__message {
-            font-size: 0.8rem;
-            // color: $bandsite-black;
-            margin-top: 3%;
-            margin-left: 5%;
-            line-height: 1.3rem;
-        }
+    &__name {
+        width: 50%;
+        display: flex;
+        font-size: 0.8rem;
+        align-items: flex-start;
+        margin-left: 5%;
+        margin-top: 5%;
+        margin-bottom: 0;
+    }
+
+    &__time {
+        font-size: 0.8rem;
+        color: $primary-silver;
+        width: 45%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    &__box {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__message {
+        font-size: 0.8rem;
+        // color: $bandsite-black;
+        margin-top: 3%;
+        margin-left: 5%;
+        line-height: 1.3rem;
+    }
 }

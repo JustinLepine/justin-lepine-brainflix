@@ -1,0 +1,36 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixins' as *;
+
+.next-videos {
+    margin: 4%;
+
+    &__cards {
+        display: flex;
+        margin: 0;
+        width: 50%;   
+    }
+
+    &__timg {
+        margin: 4%;
+        width: 7rem;
+        height: 5rem;
+        border-radius: 8px;
+    }
+
+    &__info {
+        margin: 4%;
+        width: 8rem;
+    }
+
+    &__title {
+        width: 10rem;
+        font-size: 0.9rem;
+        margin: 4%;
+    }
+    
+    &__author {
+        font-size: 0.8rem;
+        margin: 4%;
+    }
+}

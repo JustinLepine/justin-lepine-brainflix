@@ -1,0 +1,8 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixins' as *;
+
+.next-videos {
+    display: flex;
+    margin: 0 1%;
+}
