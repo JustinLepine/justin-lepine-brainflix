@@ -1,17 +1,23 @@
 import "./UserComments.scss";
 
-function UserComments({name, time, comment}) {
+function UserComments({ video }) {
     return (
-        <section className="user-comments">
-            <div className="user-comments__feedback">
-                <div className="user-comments__icon"></div>
-                <div className="user-comments__box">
-                    <h5 className="user-comments__name">{name}</h5>
-                    <p className="user-comments__time">{time}</p>
-                    <p className="user-comments__message">{comment}</p>
-                </div>
-            </div>
-        </section>
+        <ul>
+            {video.map((video) => {
+                return (
+                    <li className="user-comments" key={video.timestamp}>
+                        <div className="user-comments__feedback">
+                            <div className="user-comments__icon"></div>
+                            <div className="user-comments__box">
+                                <h5 className="user-comments__name">{video.name}</h5>
+                                <p className="user-comments__time">{video.timestamp}</p>
+                                <p className="user-comments__message">{video.comment}</p>
+                            </div>
+                        </div>
+                    </li>
+                )
+            })}
+        </ul>
     )
 }
 

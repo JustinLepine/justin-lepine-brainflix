@@ -1,6 +1,7 @@
 import { Component } from "react";
 import "./App.scss";
 import videosJSON from "./data/video-details.json";
+import videosList from "./data/videos.json";
 import Nav from "./components/Nav/Nav.js";
 import Video from "./components/Video/Video.js";
 import Description from "./components/Description/Description.js";
@@ -10,7 +11,8 @@ import NextVideosSection from "./components/NextVideosSection/NextVideosSection.
 class App extends Component {
   state = {
     videos: videosJSON,
-    selectedVideo: videosJSON[0]
+    selectedVideo: videosJSON[0],
+    videoList: videosList
   }
 
   updateSelectedVideo = (videoId) => {
@@ -22,8 +24,8 @@ class App extends Component {
   }
 
   render() {
-    const { videos, selectedVideo } = this.state;
-    const filteredVideos = videos.filter((video) => {
+    const { videoList, selectedVideo } = this.state;
+    const filteredVideos = videoList.filter((video) => {
       return video.id !== selectedVideo.id;
     })
 
@@ -32,7 +34,6 @@ class App extends Component {
         <Nav />
         <Video
           poster={selectedVideo.image}
-          video={selectedVideo.video}
         />
         <Description
           title={selectedVideo.title}
@@ -43,15 +44,11 @@ class App extends Component {
           text={selectedVideo.description}
         />
         <Comments
-          key={selectedVideo.comments[0].timestamp}
-          name={selectedVideo.comments[0].name}
-          time={selectedVideo.comments[0].timestamp}
-          comment={selectedVideo.comments[0].comment}
+          videos={selectedVideo.comments}
         />
         <NextVideosSection
-          title={filteredVideos.title}
-          image={filteredVideos.image}
-          author={filteredVideos.channel}
+          videos={filteredVideos}
+          onClick={this.updateSelectedVideo}
         />
       </>
     )

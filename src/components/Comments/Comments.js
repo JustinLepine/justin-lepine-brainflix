@@ -4,7 +4,7 @@ import avatar from "../../assets/images/Mohan-muruge.jpg";
 import UserComments from "../UserComments/UserComments";
 
 
-function Comments({ name, time, comment}) {
+function Comments({ videos, key }) {
     return (
         <section className="comment">
             <h3 className="comment__count">3 Comments</h3>
@@ -20,11 +20,8 @@ function Comments({ name, time, comment}) {
                 </form>
             </div>
 
-
             <UserComments
-                name={name}
-                time={time}
-                comment={comment}
+                video={videos}
             />
 
 

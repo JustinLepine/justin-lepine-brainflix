@@ -1,10 +1,9 @@
 import "./Video.scss";
 
-function Video({ poster, video }) {
+function Video({ poster }) {
   return (
     <>
       <video className="video" poster={poster}>
-        <source src={video}/>
       </video>
     </>
   )

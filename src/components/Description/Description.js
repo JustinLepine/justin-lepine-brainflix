@@ -4,6 +4,8 @@ import likesIcon from "../../assets/icons/likes.svg";
 
 function Description({ title, author, views, date, likes, text }) {
     return (
+        
+
         <section className="description">
             <h1 className="description__title">{title}</h1>
             <div className="description__container">
