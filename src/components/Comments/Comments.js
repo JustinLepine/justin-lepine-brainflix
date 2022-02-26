@@ -4,10 +4,10 @@ import avatar from "../../assets/images/Mohan-muruge.jpg";
 import UserComments from "../UserComments/UserComments";
 
 
-function Comments({ videos, key }) {
+function Comments({ videos, howManyComments, key }) {
     return (
         <section className="comment">
-            <h3 className="comment__count">3 Comments</h3>
+            <h3 className="comment__count">{howManyComments} Comments</h3>
             <div className="comment__container">
                 <img src={avatar} className="comment__avatar" alt="avatar-icon" />
                 <form id="form__add" className="comment__form">

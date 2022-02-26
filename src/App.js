@@ -44,6 +44,7 @@ class App extends Component {
           text={selectedVideo.description}
         />
         <Comments
+          howManyComments = {selectedVideo.comments.length}
           videos={selectedVideo.comments}
         />
         <NextVideosSection
