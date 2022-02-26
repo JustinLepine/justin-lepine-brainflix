@@ -1,8 +1,10 @@
 import "./Comments.scss";
 import commentIcon from "../../assets/icons/add_comment.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
+import UserComments from "../UserComments/UserComments";
 
-function Comments() {
+
+function Comments({ name, time, comment}) {
     return (
         <section className="comment">
             <h3 className="comment__count">3 Comments</h3>
@@ -17,15 +19,20 @@ function Comments() {
                     </div>
                 </form>
             </div>
-            {/* <div class="comment__feedback">
-                <img class="comment__icon" />
-                <div class="comment__box">
-                    <h5 class="comment__name">Connor Walton</h5>
-                    <p class="comment__time">02/17/2021</p>
-                    <p class="comment__message">This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.</p>
-                </div>
-            </div> */}
+
+
+            <UserComments
+                name={name}
+                time={time}
+                comment={comment}
+            />
+
+
         </section>
+
+
+
+
     )
 }
 
