@@ -3,10 +3,21 @@
 @use '../../styles/partials/mixins' as *;
 
 .video {
-    width: 100%;
+    display: flex;
+    justify-content: center;
     background-color: black;
+    height: fit-content;
 
-    @include tablet {
-        height: 40rem;
+    &__screen {
+        width: 100%;
+        max-height: 75vh;
+
+        @include tablet {
+            max-width: 90%;
+        }
+
+        @include desktop {
+            max-width: 80%;
+        }
     }
 }

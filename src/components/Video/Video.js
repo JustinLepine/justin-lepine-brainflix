@@ -2,10 +2,10 @@ import "./Video.scss";
 
 function Video({ poster }) {
   return (
-    <>
-      <video className="video" poster={poster}>
+    <section className="video">
+      <video controls className="video__screen" poster={poster}>
       </video>
-    </>
+    </section>
   )
 }
 

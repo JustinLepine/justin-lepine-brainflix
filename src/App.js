@@ -8,12 +8,16 @@ import Description from "./components/Description/Description.js";
 import Comments from "./components/Comments/Comments.js";
 import NextVideosSection from "./components/NextVideosSection/NextVideosSection.js";
 
+  // JSON data import
+
 class App extends Component {
   state = {
     videos: videosJSON,
     selectedVideo: videosJSON[0],
     videoList: videosList
   }
+
+  // Selecting active video
 
   updateSelectedVideo = (videoId) => {
     const newSelectedVideo = this.state.videos.find((video) => {
@@ -24,6 +28,9 @@ class App extends Component {
   }
 
   render() {
+
+  // Filtering through videos to insure selected video doesn't run
+
     const { videoList, selectedVideo } = this.state;
     const filteredVideos = videoList.filter((video) => {
       return video.id !== selectedVideo.id;
@@ -44,7 +51,7 @@ class App extends Component {
           text={selectedVideo.description}
         />
         <Comments
-          howManyComments = {selectedVideo.comments.length}
+          howManyComments={selectedVideo.comments.length}
           videos={selectedVideo.comments}
         />
         <NextVideosSection

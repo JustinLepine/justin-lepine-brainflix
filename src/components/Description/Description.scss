@@ -1,47 +1,85 @@
 @use '../../styles/partials/colors' as *;
-@use '../../styles/partials/typography' as *;
 @use '../../styles/partials/mixins' as *;
 
 .description {
     margin: 4%;
     color: $brainflix-black;
 
+    @include desktop {
+        width: 66%;
+    }
+
     &__title {
         border-bottom: 1px solid $primary-silver;
         padding-bottom: 0.8rem;
         font-weight: 700;
+
+        @include tablet {
+            width: 100%;
+        }
     }
     
     &__container {
         color: $primary-silver;
-        border-bottom: 1px solid $primary-silver;
         display: flex;
+        margin: 0 4%;
         flex-wrap: wrap;
+
+        @include tablet {
+            display: flex;
+            margin: 0;
+        }
     }
 
     &__socials {
         display: flex;
+
+        @include tablet {
+            margin-left: 4%;
+            order: 3;
+        }
     }
 
     &__artist {
         color: $brainflix-black;
         font-size: 0.9rem;
+        font-weight: 700;
         width: 50%;
+        
+        @include tablet {
+            width: fit-content;
+            order: 0;
+        }
     }
 
     &__views {
         width: 50%;
         color: $primary-silver;
+        
+        @include tablet {
+            width: fit-content;
+        }
     }
     
     &__dates {
         width: 50%;
         color: $primary-silver;
+        
+        @include tablet {
+            width: fit-content;
+            order: 2;
+            margin-right: auto;
+            margin-left: 1rem;
+        }
     }
     
     &__likes {
         width: 50%;
         color: $primary-silver;
+        
+        @include tablet {
+            width: fit-content;
+        }
     }
 
     &__icons {
@@ -52,5 +90,10 @@
     &__text {
         font-size: 0.82rem;
         line-height: 1.1rem;
+        color: $brainflix-black;
+
+        @include tablet {
+            order: 4;
+        }
     }
 }

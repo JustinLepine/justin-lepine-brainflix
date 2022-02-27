@@ -1,6 +1,5 @@
 import "./NextVideosSection.scss";
 
-
 function NextVideosSection({ videos, onClick }) {
     return (
         <section className="next-videos-section">
@@ -21,8 +20,7 @@ function NextVideosSection({ videos, onClick }) {
                             </div>
                         </li>
                     )
-                })
-                }
+                })}
             </ul>
         </section>
     )
