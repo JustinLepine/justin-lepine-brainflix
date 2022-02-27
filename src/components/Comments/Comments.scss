@@ -6,7 +6,7 @@
     margin: 4%;
 
     @include desktop {
-        width: 66%;
+        margin-right: 0;
     }
 
     &__count {
@@ -78,6 +78,10 @@
             width: 27rem;
             min-height: 0.5rem;
         }
+
+        @include desktop {
+            width: 23rem;
+        }
     }
 
     &__button {
@@ -94,6 +98,10 @@
             width: 10rem;
             height: 2rem;
             margin: 1.28rem 0 0 0;
+        }
+
+        @include desktop{
+            margin-right: 4%;
         }
     }
 

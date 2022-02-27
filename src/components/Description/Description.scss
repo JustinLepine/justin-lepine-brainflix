@@ -6,15 +6,20 @@
     color: $brainflix-black;
 
     @include desktop {
-        width: 66%;
+        margin-right: 0;
+
     }
 
     &__title {
         border-bottom: 1px solid $primary-silver;
+        font-size: 1.5rem;
         padding-bottom: 0.8rem;
         font-weight: 700;
-
+        margin-bottom: 0;
+        
         @include tablet {
+            border: none;
+            font-size: 1.9rem;
             width: 100%;
         }
     }
@@ -80,6 +85,10 @@
         @include tablet {
             width: fit-content;
         }
+
+        @include desktop {
+            padding-right: 1rem;
+        }
     }
 
     &__icons {
@@ -91,9 +100,17 @@
         font-size: 0.82rem;
         line-height: 1.1rem;
         color: $brainflix-black;
+        border-top: 1px solid $primary-silver;
+        padding-top: 1rem;
+        margin-top: 0;
 
         @include tablet {
+            // border: none;
             order: 4;
+        }
+
+        @include desktop {
+            padding-right: 1rem;
         }
     }
 }

@@ -3,10 +3,10 @@
 
 .next-videos-section {
     margin: 4%;
-    // display: flex;
 
     &__subtitle {
-        color: $primary-silver;
+        color: $primary-silver;       
+        margin-bottom: 0; 
     }
 
     &__container {

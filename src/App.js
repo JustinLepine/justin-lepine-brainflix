@@ -42,22 +42,28 @@ class App extends Component {
         <Video
           poster={selectedVideo.image}
         />
-        <Description
-          title={selectedVideo.title}
-          author={selectedVideo.channel}
-          views={selectedVideo.views}
-          date={selectedVideo.timestamp}
-          likes={selectedVideo.likes}
-          text={selectedVideo.description}
-        />
-        <Comments
-          howManyComments={selectedVideo.comments.length}
-          videos={selectedVideo.comments}
-        />
-        <NextVideosSection
-          videos={filteredVideos}
-          onClick={this.updateSelectedVideo}
-        />
+        <div className="app">
+          <section className="app__left">
+            <Description
+              title={selectedVideo.title}
+              author={selectedVideo.channel}
+              views={selectedVideo.views}
+              date={selectedVideo.timestamp}
+              likes={selectedVideo.likes}
+              text={selectedVideo.description}
+            />
+            <Comments
+              howManyComments={selectedVideo.comments.length}
+              videos={selectedVideo.comments}
+            />
+          </section>
+          <section className="app__right">
+            <NextVideosSection
+              videos={filteredVideos}
+              onClick={this.updateSelectedVideo}
+            />
+          </section>
+        </div>
       </>
     )
   }

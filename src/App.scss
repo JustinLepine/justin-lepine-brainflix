@@ -1,6 +1,31 @@
 @use './styles/partials/typography' as *;
+@use './styles/partials/mixins' as *;
+@use './styles/partials/colors' as *;
 
 * {
     font-family: $font-avenir;
     font-weight: 400;
+}
+
+.app {
+    
+    @include desktop {
+        margin: 0 10%;
+        display: flex;
+    }
+
+    &__left {
+        @include desktop {
+            width: 66%;
+            @include desktop {
+                border-right: 1px solid $primary-silver;
+            }
+        }
+    }
+
+    &__right {
+        @include desktop {
+            width: 33%;
+        }
+    }
 }
