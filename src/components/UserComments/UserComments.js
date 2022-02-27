@@ -8,10 +8,10 @@ function UserComments({ video }) {
         return date;
     }
     return (
-        <ul>
+        <ul className="user-comments">
             {video.map((video) => {
                 return (
-                    <li className="user-comments" key={video.timestamp}>
+                    <li  key={video.timestamp}>
                         <div className="user-comments__feedback">
                             <div className="user-comments__icon"></div>
                             <div className="user-comments__box">

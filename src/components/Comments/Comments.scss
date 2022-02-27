@@ -5,6 +5,10 @@
 .comment {
     margin: 4%;
 
+    @include desktop {
+        width: 66%;
+    }
+
     &__count {
         color: $brainflix-black;
         font-size: 0.9rem;
@@ -15,7 +19,7 @@
         justify-content: center;
         border-bottom: 1px solid $primary-silver;
         padding-bottom: 1rem;
-
+        
         @include tablet {
             height: 5rem;
         }

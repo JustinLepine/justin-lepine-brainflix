@@ -3,17 +3,22 @@
 @use '../../styles/partials/mixins' as *;
 
 .user-comments {
-    margin: 4%;
+    list-style: none;
+    padding: 0;
 
     &__icon {
         border-radius: 50%;
         margin-top: 2rem;
-        margin-top: 5%;
+        margin-top: 0;
         height: 2.8rem;
         width: 2.8rem;
-        background: $primary-silver;
+        background: $secondary-mercury;
         object-fit: cover;
         object-position: 10% 100%;
+
+        @include tablet {
+            margin-top: 1rem;
+        }
     }
 
     &__feedback {
@@ -21,15 +26,18 @@
         font-weight: 700;
         display: flex;
         border-bottom: 1px solid $primary-silver;
+        margin-top: 1rem;
     }
     
     &__name {
         width: 50%;
+        color: $brainflix-black;
         display: flex;
         font-size: 0.8rem;
         align-items: flex-start;
+        font-weight: 700;
         margin-left: 5%;
-        margin-top: 5%;
+        margin-top: 0;
         margin-bottom: 0;
     }
 
@@ -41,6 +49,7 @@
         justify-content: flex-end;
         align-items: center;
         margin-bottom: 0;
+        margin-top: 0;
     }
 
     &__box {
@@ -50,10 +59,14 @@
     }
 
     &__message {
-        font-size: 0.8rem;
-        // color: $bandsite-black;
+        font-size: 0.85rem;
+        color: $brainflix-black;
         margin-top: 3%;
         margin-left: 5%;
         line-height: 1.3rem;
+
+        @include tablet {
+            font-size: 0.9rem;
+        }
     }
 }
