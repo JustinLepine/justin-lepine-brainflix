@@ -7,6 +7,9 @@ import Video from "./components/Video/Video.js";
 import Description from "./components/Description/Description.js";
 import Comments from "./components/Comments/Comments.js";
 import NextVideosSection from "./components/NextVideosSection/NextVideosSection.js";
+import Home from "./pages/Home/Home";
+import Uploads from "./pages/Upload/Upload";
+import NotFound from "./pages/NotFound/NotFound";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
   // JSON data import
@@ -38,34 +41,39 @@ class App extends Component {
     })
 
     return (
-      <>
+      <BrowserRouter>
         <Nav />
-        <Video
-          poster={selectedVideo.image}
-        />
-        <div className="app">
-          <section className="app__left">
-            <Description
-              title={selectedVideo.title}
-              author={selectedVideo.channel}
-              views={selectedVideo.views}
-              date={selectedVideo.timestamp}
-              likes={selectedVideo.likes}
-              text={selectedVideo.description}
-            />
-            <Comments
-              howManyComments={selectedVideo.comments.length}
-              videos={selectedVideo.comments}
-            />
-          </section>
-          <section className="app__right">
-            <NextVideosSection
-              videos={filteredVideos}
-              onClick={this.updateSelectedVideo}
-            />
-          </section>
-        </div>
-      </>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/uploads" component={Uploads} />
+          <Route component={NotFound} />
+          <Video
+            poster={selectedVideo.image}
+          />
+          <div className="app">
+            <section className="app__left">
+              <Description
+                title={selectedVideo.title}
+                author={selectedVideo.channel}
+                views={selectedVideo.views}
+                date={selectedVideo.timestamp}
+                likes={selectedVideo.likes}
+                text={selectedVideo.description}
+              />
+              <Comments
+                howManyComments={selectedVideo.comments.length}
+                videos={selectedVideo.comments}
+              />
+            </section>
+            <section className="app__right">
+              <NextVideosSection
+                videos={filteredVideos}
+                onClick={this.updateSelectedVideo}
+              />
+            </section>
+          </div>
+        </Switch>
+      </BrowserRouter>
     )
   }
 }
