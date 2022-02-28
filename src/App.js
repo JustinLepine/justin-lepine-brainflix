@@ -7,6 +7,7 @@ import Video from "./components/Video/Video.js";
 import Description from "./components/Description/Description.js";
 import Comments from "./components/Comments/Comments.js";
 import NextVideosSection from "./components/NextVideosSection/NextVideosSection.js";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
   // JSON data import
 
