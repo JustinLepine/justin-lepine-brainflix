@@ -1,12 +1,16 @@
 import "./UserComments.scss";
 
 function UserComments({ video }) {
+
+    //Formatting date to mm/dd/yyyy
+
     const formattedDate = (timestamp) => {
         let date = new Date(Number(timestamp))
         const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
         date = date.toLocaleDateString("en-US", options);
         return date;
     }
+    
     return (
         <ul className="user-comments">
             {video.map((video) => {

@@ -3,12 +3,16 @@ import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
 
 function Description({ title, ...rest }) {
+
+    //Formatting date to mm/dd/yyyy
+
     const formattedDate = (timestamp) => {
-    let date = new Date(Number(timestamp))
-    const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
-    date = date.toLocaleDateString("en-US", options);
-    return date;
-}
+        let date = new Date(Number(timestamp))
+        const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
+        date = date.toLocaleDateString("en-US", options);
+        return date;
+    }
+    
     return (
         <section className="description">
             <h1 className="description__title">{title}</h1>

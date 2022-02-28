@@ -3,9 +3,9 @@
 
 .nav {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
     &__logo {
         width: 9rem;
@@ -23,14 +23,14 @@
 
     &__form {
         width: 12.7rem;
-        display: flex;
-        align-items: center;
         margin: 0.8rem 0.8rem 0.8rem 0;
         padding: 0.7rem;
-        border: $primary-silver 1px solid;
-        border-radius: 5px;
-        background-color: $secondary-alabaster;
+        display: flex;
+        align-items: center;
         transition: 0.5s ease-in-out;
+        border-radius: 5px;
+        border: $primary-silver 1px solid;
+        background-color: $secondary-alabaster;
 
         @include tablet {
             width: 12rem;
@@ -45,6 +45,7 @@
     
     &__input {
         border: none;
+        outline: none;
         background-color: $secondary-alabaster;
     }
     
@@ -86,6 +87,10 @@
         border-radius: 5px;
         background-color: $brainflix-blue;
         transition: 0.5s ease-in-out;
+
+        &:hover {
+            background-color: $brainflix-darkblue;
+        }
 
         @include tablet {
             width: 10rem;

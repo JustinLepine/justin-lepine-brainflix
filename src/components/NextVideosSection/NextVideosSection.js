@@ -5,6 +5,9 @@ function NextVideosSection({ videos, onClick }) {
         <section className="next-videos-section">
             <h5 className="next-videos-section__subtitle">NEXT VIDEOS</h5>
             <ul className="next-videos-section__container">
+
+                {/* Mapping through all non selected videos */}
+
                 {videos.map((video) => {
                     return (
                         <li className="next-videos-section__cards"
