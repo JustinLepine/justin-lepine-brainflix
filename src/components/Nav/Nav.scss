@@ -1,6 +1,10 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/mixins' as *;
 
+a {
+    text-decoration: none;
+}
+
 .nav {
     display: flex;
     justify-content: center;
