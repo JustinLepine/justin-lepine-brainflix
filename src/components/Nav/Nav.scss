@@ -13,15 +13,15 @@ a {
 
     &__logo {
         width: 9rem;
-        margin: 4% 25% 0;
+        margin: 4% 0 0;
         transition: 0.5s ease-in-out;
 
         @include tablet {
-            margin: 0 9% 0 0;
+            margin: 0 9% 0 20%;
         }
         
         @include desktop {
-            margin: 0 25% 0 0;
+            margin: 0 25% 0 65%;
         }
     }
 
@@ -39,6 +39,7 @@ a {
         @include tablet {
             width: 12rem;
             margin: 2%;
+            margin-left: auto;
         }
     }
 
@@ -77,6 +78,7 @@ a {
             @include tablet {
                 display: flex;
                 visibility: visible;
+                margin-right: 6%;
             }
         }
     }
