@@ -6,26 +6,32 @@
     flex-direction: column;
 
     &__title {
-        margin: 0 1.2rem 0 1rem;
+        margin: 0;
+        padding-top: 1.4rem;
+        padding-left: 1rem;
         padding-bottom: 0.8rem;
         font-size: 1.5rem;
         font-weight: 700;
         border-top: 1px solid $primary-silver;
         color: $brainflix-black;
-        padding-top: 1.7rem;
         
         @include tablet {
-            border: none;
             font-size: 1.9rem;
             width: 100%;
+            // margin-left: 5%;
+            padding-left: 5%;
         }
     }
     
     &__subtitle {
-        margin: 0.3rem 1.2rem 0.1rem 1rem;
+        margin: 0.3rem 1.2rem 0.3rem 1rem;
         font-weight: 400;
         font-size: 0.75rem;
         color: $primary-silver;
+
+        @include tablet {
+            margin-left: 5%;
+        }
     }
     
     &__picture {
@@ -33,71 +39,11 @@
         width: 90%;
         align-self: center;
         margin-bottom: 1rem;
-    }
-
-    &__video-title {
-        margin: 0.2rem 1.2rem 0.3rem 1rem;
-        resize: none;
-        font-size: 0.8rem;
-    }
-    
-    &__video-desc {
-        margin: 0.2rem 1.2rem 0.3rem 1rem;
-        height: 4rem;
-        resize: none;
-        font-size: 0.8rem;
-    }
-
-    &__button {
-        width: 17.5rem;
-        margin: 2% 6%;
-        padding: 0.6rem 0.2rem;
-        display: flex;
-        align-items: center;
-        align-self: center;
-        justify-content: center;
-        border-radius: 5px;
-        transition: 0.5s ease-in-out;
-        background-color: $brainflix-blue;
-
-        &:hover {
-            background-color: $brainflix-darkblue;
-        }
 
         @include tablet {
-            width: 10rem;
-            height: 2rem;
-            padding: 0.4rem 0.2rem;
-            margin: 1.28rem 0 0 0;
-        }
-
-        @include desktop{
-            margin-right: 4%;
+            width: 45%;
+            align-self: flex-start;
+            margin-left: 5%;
         }
     }
-
-    &__icon {
-        width: 1.4rem;
-        margin-left: 0.3rem;
-    }
-
-    &__publish {
-        width: 90%;
-        text-align: center;
-        text-decoration: none;
-        font-size: 0.78rem;
-        color: $primary-white;
-    }
-
-    &__cancel-button {
-        margin-top: 1.5rem;
-        align-self: center;
-    }
-
-    &__cancel {
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: $brainflix-blue;
-    }
-
 }
