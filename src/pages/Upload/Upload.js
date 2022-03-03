@@ -5,12 +5,18 @@ import UploadInput from '../../components/UploadInput/UploadInput';
 
 function Upload() {
   return (
-    <section className="upload">
+    <>
       <h1 className="upload__title">Upload Video</h1>
-      <h5 className="upload__subtitle">VIDEO THUMBNAIL</h5>
-      <img className="upload__picture" src={Sample} alt="video sample" />
-      <UploadInput />
-    </section>
+      <section className="upload">
+        <div className='upload__container'>
+          <h5 className="upload__subtitle">VIDEO THUMBNAIL</h5>
+          <img className="upload__picture" src={Sample} alt="video sample" />
+        </div>
+        <div className='upload__container upload__container--right'>
+          <UploadInput />
+        </div>
+      </section>
+    </>
   )
 }
 

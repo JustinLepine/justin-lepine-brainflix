@@ -4,6 +4,22 @@
 .upload {
     display: flex;
     flex-direction: column;
+    @include desktop {
+        flex-direction: row;
+    }
+
+    &__container {
+        @include desktop {
+            border-top: 1px solid $primary-silver;
+            width: 40%;
+        }
+
+        &--right {
+            @include tablet {
+                border: none;
+            }
+        }
+    }
 
     &__title {
         margin: 0;
@@ -12,30 +28,40 @@
         padding-bottom: 0.8rem;
         font-size: 1.5rem;
         font-weight: 700;
-        border-top: 1px solid $primary-silver;
         color: $brainflix-black;
+        border-top: 1px solid $primary-silver;
         
         @include tablet {
+            // border: none;
             font-size: 1.9rem;
-            width: 100%;
-            // margin-left: 5%;
+            width: 90%;
             padding-left: 5%;
         }
     }
     
     &__subtitle {
         margin: 0.3rem 1.2rem 0.3rem 1rem;
+        padding-top: 1.6rem;
         font-weight: 400;
         font-size: 0.75rem;
         color: $primary-silver;
-
+        
         @include tablet {
+            border-top: 1px solid $primary-silver;
             margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 0.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @include desktop {
+            border: none;
         }
     }
     
     &__picture {
         border-radius: 5px;
+        margin-left: 5%;
         width: 90%;
         align-self: center;
         margin-bottom: 1rem;
@@ -43,7 +69,10 @@
         @include tablet {
             width: 45%;
             align-self: flex-start;
-            margin-left: 5%;
+        }
+
+        @include desktop {
+            width: 22rem;
         }
     }
 }
