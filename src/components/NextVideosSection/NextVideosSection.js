@@ -1,32 +1,55 @@
 import "./NextVideosSection.scss";
+// import axios from "axios";
+import React from "react";
+import api from "../../utils/api";
 
-function NextVideosSection({ videos, onClick }) {
-    return (
-        <section className="next-videos-section">
-            <h5 className="next-videos-section__subtitle">NEXT VIDEOS</h5>
-            <ul className="next-videos-section__container">
+// .then(res => { console.log(res.data[0].image) })
+//             .catch(err => err)  
 
-                {/* Mapping through all non selected videos */}
+class NextVideosSection extends React.Component {
+    state = {
+        video: []
+    }
 
-                {videos.map((video) => {
-                    return (
-                        <li className="next-videos-section__cards"
-                            key={video.id}
-                            onClick={() => {
-                                onClick(video.id);
-                            }}
-                        >
-                            <img src={video.image} className="next-videos-section__timg" alt="next-video-timg" />
-                            <div className="next-videos-section__info">
-                                <h6 className="next-videos-section__title">{video.title}</h6>
-                                <p className="next-videos-section__author">{video.channel}</p>
-                            </div>
-                        </li>
-                    )
-                })}
-            </ul>
-        </section>
-    )
+    componentDidMount() {
+        api
+            .getVideo()
+            .then(res => {
+                console.log(res.data);
+                this.setState({
+                    video: res.data
+                })
+            })
+            .catch(err => err)
+    }
+
+    render() {
+        return (
+            <section className="next-videos-section">
+                <h5 className="next-videos-section__subtitle">NEXT VIDEOS</h5>
+                <ul className="next-videos-section__container">
+
+                    {/* Mapping through all non selected videos */}
+
+                    {this.state.video.map((video) => {
+                        return (
+                            <li className="next-videos-section__cards"
+                                key={video.id}
+
+                            >
+                                <img src={video.image} className="next-videos-section__timg" alt="next-video-timg" />
+                                <div className="next-videos-section__info">
+                                    <h6 className="next-videos-section__title">{video.title}</h6>
+                                    <p className="next-videos-section__author">{video.channel}</p>
+                                </div>
+                            </li>
+                        )
+                    }
+                    )}
+                </ul>
+            </section>
+        )
+    }
 }
 
 export default NextVideosSection;

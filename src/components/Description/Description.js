@@ -2,7 +2,10 @@ import "./Description.scss";
 import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
 
+
 function Description({ title, ...rest }) {
+
+
 
     //Formatting date to mm/dd/yyyy
 
