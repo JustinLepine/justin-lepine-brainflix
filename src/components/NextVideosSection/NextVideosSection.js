@@ -1,27 +1,32 @@
 import "./NextVideosSection.scss";
-// import axios from "axios";
 import React from "react";
 import api from "../../utils/api";
-
-// .then(res => { console.log(res.data[0].image) })
-//             .catch(err => err)  
 
 class NextVideosSection extends React.Component {
     state = {
         video: []
+
+
     }
+
+    // Mounting video from API
 
     componentDidMount() {
         api
             .getVideo()
             .then(res => {
-                console.log(res.data);
                 this.setState({
                     video: res.data
                 })
             })
             .catch(err => err)
     }
+
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.activeTeamId !== this.props.activeTeamId) {
+    //         this.updateTeams();
+    //     }
+    //   }
 
     render() {
         return (
@@ -35,7 +40,7 @@ class NextVideosSection extends React.Component {
                         return (
                             <li className="next-videos-section__cards"
                                 key={video.id}
-
+                                
                             >
                                 <img src={video.image} className="next-videos-section__timg" alt="next-video-timg" />
                                 <div className="next-videos-section__info">

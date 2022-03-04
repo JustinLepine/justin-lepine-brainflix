@@ -15,7 +15,7 @@ function Description({ title, ...rest }) {
         date = date.toLocaleDateString("en-US", options);
         return date;
     }
-    
+
     return (
         <section className="description">
             <h1 className="description__title">{title}</h1>

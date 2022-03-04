@@ -5,5 +5,5 @@ const API_URL = "https://project-2-api.herokuapp.com";
 const videoLink = `${API_URL}/videos${API_KEY}`;
 
 export default {
-    getVideo: () => axios.get(`${API_URL}/videos${API_KEY}`)       
+    getVideo: () => axios.get(videoLink)
 }
