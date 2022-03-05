@@ -12,7 +12,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/uploads" component={Uploads} />
-          <Route path="/:id" component={Home} />
+          <Route path="/videos/:id" component={Home} />
         </Switch>
       </BrowserRouter>
     )

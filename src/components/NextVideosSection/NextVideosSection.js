@@ -1,44 +1,20 @@
 import "./NextVideosSection.scss";
 import React from "react";
-import api from "../../utils/api";
+import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom"
 
-class NextVideosSection extends React.Component {
-    state = {
-        video: []
-    }
+function NextVideosSection(videos) {
+    return (
+        <section className="next-videos-section">
+            <h5 className="next-videos-section__subtitle">NEXT VIDEOS</h5>
+            <ul className="next-videos-section__container">
 
-    // Mounting video from API
+                {/* Mapping through all non selected videos */}
 
-    componentDidMount() {
-        api
-            .getVideo()
-            .then(res => {
-                this.setState({
-                    video: res.data
-                })
-            })
-            .catch(err => err)
-    }
-
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.activeTeamId !== this.props.activeTeamId) {
-    //         this.updateTeams();
-    //     }
-    //   }
-
-    render() {
-        return (
-            <section className="next-videos-section">
-                <h5 className="next-videos-section__subtitle">NEXT VIDEOS</h5>
-                <ul className="next-videos-section__container">
-
-                    {/* Mapping through all non selected videos */}
-
-                    {this.state.video.map((video) => {
-                        return (
+                {videos.videos.map((video) => {
+                    return (
+                        <Link to={`/videos/${video.id}`} key={video.id} >
                             <li className="next-videos-section__cards"
-                                key={video.id}
-                                
                             >
                                 <img src={video.image} className="next-videos-section__timg" alt="next-video-timg" />
                                 <div className="next-videos-section__info">
@@ -46,13 +22,14 @@ class NextVideosSection extends React.Component {
                                     <p className="next-videos-section__author">{video.channel}</p>
                                 </div>
                             </li>
-                        )
-                    }
-                    )}
-                </ul>
-            </section>
-        )
-    }
+                        </Link>
+                    )
+                }
+                )}
+            </ul>
+        </section>
+    )
 }
+
 
 export default NextVideosSection;

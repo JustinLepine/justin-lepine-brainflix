@@ -4,51 +4,45 @@ import Description from "../../components/Description/Description.js";
 import Comments from "../../components/Comments/Comments.js";
 import NextVideosSection from "../../components/NextVideosSection/NextVideosSection.js";
 import { Component } from "react";
-import axios from 'axios';
+import api from '../../utils/api'
 
 class Home extends Component {
     state = {
-        // videos: videosJSON,
         videoList: [],
         selectedVideo: null
     }
 
+
     componentDidMount() {
 
-        // need selected video and videolist
-        
-        this.loadVideo()
-    }
-
-    loadVideo = () => {
-        axios
-            .get('https://project-2-api.herokuapp.com/videos?api_key=e19b596e-2655-4a4f-9242-e96ab392744b')
+        api.getVideo()
             .then(res => {
-                console.log(res)
                 this.setState({
-                    videoList : res.data
+                    videoList: res.data
                 });
-                axios
-                    .get(`https://project-2-api.herokuapp.com/videos/${res.data[0].id}?api_key=e19b596e-2655-4a4f-9242-e96ab392744b`)
+                return api.getVideoId(this.props.match.params.id || res.data.id)
 
-                    // refer to react router lab
-
-                    .then(res => {
-                        this.setState({
-                            selectedVideo: res.data
-                        });
-                    });
-            });
+            })
+            .then(res => {
+                this.setState({
+                    selectedVideo: res.data
+                })
+            })
     }
 
     componentDidUpdate(prevProps) {
-        const { videoId: prevVideoId } = prevProps.match.params;
-        const { videoId } = this.props.match.params;
 
-        // refer back match
+        // console.log(prevProps)
+        const currentId = prevProps.match.params.id || this.state.videoList[0].id;
+        const prevId = prevProps.match.params.id;
 
-        if (prevVideoId !== videoId) {
-            this.loadVideo(videoId);
+        if (prevId !== this.props.match.params.id) {
+            api.getVideoId(currentId)
+                .then(res => {
+                    this.setState({
+                        selectedVideo: res.data
+                    })
+                })
         }
     }
 
@@ -58,6 +52,7 @@ class Home extends Component {
         const newSelectedVideo = this.state.videos.find((video) => {
             return video.id === videoId;
         })
+        console.log(newSelectedVideo)
         this.setState({ selectedVideo: newSelectedVideo });
     }
 
@@ -73,9 +68,6 @@ class Home extends Component {
         const filteredVideos = videoList.filter((video) => {
             return video.id !== selectedVideo.id;
         })
-
-        // console.log(test())
-        
         return (
             <>
                 <Video
@@ -84,22 +76,16 @@ class Home extends Component {
                 <div className="app">
                     <section className="app__left">
                         <Description
-                            title={this.state.selectedVideo.title}
-                            author={this.state.selectedVideo.channel}
-                            views={this.state.selectedVideo.views}
-                            date={this.state.selectedVideo.timestamp}
-                            likes={this.state.selectedVideo.likes}
-                            text={this.state.selectedVideo.description}
+                            selectedVideo={this.state.selectedVideo}
                         />
                         <Comments
                             howManyComments={this.state.selectedVideo.comments.length}
                             videos={this.state.selectedVideo.comments}
                         />
-                        </section>
+                    </section>
                     <section className="app__right">
                         <NextVideosSection
                             videos={filteredVideos}
-                            onClick={this.updateSelectedVideo}
                         />
                     </section>
                 </div>
