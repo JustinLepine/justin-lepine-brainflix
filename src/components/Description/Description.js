@@ -5,8 +5,6 @@ import likesIcon from "../../assets/icons/likes.svg";
 
 function Description({ title, ...rest }) {
 
-
-
     //Formatting date to mm/dd/yyyy
 
     const formattedDate = (timestamp) => {

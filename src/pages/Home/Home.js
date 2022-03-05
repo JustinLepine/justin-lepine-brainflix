@@ -5,38 +5,34 @@ import Comments from "../../components/Comments/Comments.js";
 import NextVideosSection from "../../components/NextVideosSection/NextVideosSection.js";
 import { Component } from "react";
 import axios from 'axios';
-import api from '../../utils/api.js';
 
 class Home extends Component {
     state = {
         // videos: videosJSON,
-        // videoList: videosList,
+        videoList: [],
         selectedVideo: null
     }
 
     componentDidMount() {
+
+        // need selected video and videolist
+        
         this.loadVideo()
     }
-
-    test = () => {
-        api
-            .getVideo()
-            .then(res => {
-                this.setState({
-                    videoList: res.data
-                })
-            })
-            .catch(err => {
-                console.log('error')
-            })
-        }
 
     loadVideo = () => {
         axios
             .get('https://project-2-api.herokuapp.com/videos?api_key=e19b596e-2655-4a4f-9242-e96ab392744b')
             .then(res => {
+                console.log(res)
+                this.setState({
+                    videoList : res.data
+                });
                 axios
                     .get(`https://project-2-api.herokuapp.com/videos/${res.data[0].id}?api_key=e19b596e-2655-4a4f-9242-e96ab392744b`)
+
+                    // refer to react router lab
+
                     .then(res => {
                         this.setState({
                             selectedVideo: res.data
@@ -48,6 +44,8 @@ class Home extends Component {
     componentDidUpdate(prevProps) {
         const { videoId: prevVideoId } = prevProps.match.params;
         const { videoId } = this.props.match.params;
+
+        // refer back match
 
         if (prevVideoId !== videoId) {
             this.loadVideo(videoId);
@@ -71,10 +69,10 @@ class Home extends Component {
 
         // Filtering through videos to insure selected video doesn't run
 
-        // const { videoList, selectedVideo } = this.state;
-        // const filteredVideos = videoList.filter((video) => {
-        //     return video.id !== selectedVideo.id;
-        // })
+        const { videoList, selectedVideo } = this.state;
+        const filteredVideos = videoList.filter((video) => {
+            return video.id !== selectedVideo.id;
+        })
 
         // console.log(test())
         
@@ -100,7 +98,7 @@ class Home extends Component {
                         </section>
                     <section className="app__right">
                         <NextVideosSection
-                            // videos={filteredVideos}
+                            videos={filteredVideos}
                             onClick={this.updateSelectedVideo}
                         />
                     </section>

@@ -5,8 +5,6 @@ import api from "../../utils/api";
 class NextVideosSection extends React.Component {
     state = {
         video: []
-
-
     }
 
     // Mounting video from API
