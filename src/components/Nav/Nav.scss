@@ -41,6 +41,11 @@ a {
             margin: 2%;
             margin-left: auto;
         }
+
+        @include desktop {
+            margin: 1.3%;
+            margin-left: auto;
+        }
     }
 
     &__search {
