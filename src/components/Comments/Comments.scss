@@ -60,10 +60,6 @@
         margin: 0 1.2rem 0.3rem 0rem;
         font-weight: 400;
         color: $primary-silver;
-
-        @include tablet {
-            // margin-left: 1rem;
-        }
     }
 
     &__text {

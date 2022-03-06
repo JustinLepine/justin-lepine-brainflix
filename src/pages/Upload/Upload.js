@@ -6,9 +6,9 @@ import UploadButtons from '../../components/UploadButtons/UploadButtons';
 
 function Upload() {
   return (
-    <>
+    <main className='upload'>
       <h1 className="upload__title">Upload Video</h1>
-      <section className="upload">
+      <section className="upload__box">
         <div className='upload__container'>
           <h5 className="upload__subtitle">VIDEO THUMBNAIL</h5>
           <img className="upload__picture" src={Sample} alt="video sample" />
@@ -16,9 +16,9 @@ function Upload() {
         <div className='upload__container upload__container--right'>
           <UploadInput />
         </div>
-        <UploadButtons />
       </section>
-    </>
+        <UploadButtons />
+    </main>
   )
 }
 

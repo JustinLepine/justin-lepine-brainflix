@@ -3,8 +3,7 @@ import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
 import tools from "../../utils/tools";
 
-function Description({ selectedVideo }) {
-    
+function Description({ selectedVideo }) {    
     return (
         <section className="description">
             <h1 className="description__title">{selectedVideo.title}</h1>

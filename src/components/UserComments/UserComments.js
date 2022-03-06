@@ -1,8 +1,7 @@
 import "./UserComments.scss";
 import tools from "../../utils/tools";
 
-function UserComments({ video }) {
-   
+function UserComments({ video }) {   
     return (
         <ul className="user-comments">
             {video.map((video) => {
