@@ -12,7 +12,7 @@
     &__subtitle {
         margin: 0.3rem 1.2rem 0.1rem 1rem;
         font-weight: 400;
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         color: $primary-silver;
 
         @include tablet {
@@ -24,10 +24,11 @@
         margin: 0.2rem 1.2rem 0.3rem 1rem;
         resize: none;
         font-size: 0.8rem;
-        padding: 2%;
+        padding: 3%;
         border-color: $primary-silver;
         background-color: $secondary-alabaster;
         border-radius: 5px;
+        height: 1rem;
 
         @include tablet {
             margin: 0.2rem 5%;
@@ -43,7 +44,7 @@
         height: 4rem;
         resize: none;
         font-size: 0.8rem;
-        padding: 2%;
+        padding: 3%;
         border-color: $primary-silver;
         background-color: $secondary-alabaster;
         border-radius: 5px;
@@ -59,7 +60,6 @@
 
     &__container {
         display: flex;
-        margin-top: 1rem;
         flex-direction: column;
 
         @include tablet {
@@ -128,7 +128,7 @@
     }
 
     &__cancel {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         font-weight: 700;
         color: $brainflix-blue;
     }

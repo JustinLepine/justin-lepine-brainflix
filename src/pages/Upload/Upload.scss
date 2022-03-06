@@ -26,13 +26,12 @@
         padding-top: 1.4rem;
         padding-left: 1rem;
         padding-bottom: 0.8rem;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 700;
         color: $brainflix-black;
         border-top: 1px solid $primary-silver;
         
         @include tablet {
-            // border: none;
             font-size: 1.9rem;
             width: 90%;
             padding-left: 5%;
@@ -41,9 +40,8 @@
     
     &__subtitle {
         margin: 0.3rem 1.2rem 0.3rem 1rem;
-        padding-top: 1.6rem;
         font-weight: 400;
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         color: $primary-silver;
         
         @include tablet {
@@ -64,7 +62,7 @@
         margin-left: 5%;
         width: 90%;
         align-self: center;
-        margin-bottom: 1rem;
+        margin-bottom: 0.2rem;
 
         @include tablet {
             width: 45%;
