@@ -4,7 +4,7 @@ import Description from "../../components/Description/Description.js";
 import Comments from "../../components/Comments/Comments.js";
 import NextVideosSection from "../../components/NextVideosSection/NextVideosSection.js";
 import { Component } from "react";
-import api from '../../utils/api'
+import api from '../../utils/tools'
 
 class Home extends Component {
     state = {
@@ -12,28 +12,28 @@ class Home extends Component {
         selectedVideo: null
     }
 
-
     componentDidMount() {
-
+        
         api.getVideo()
             .then(res => {
                 this.setState({
                     videoList: res.data
                 });
-                return api.getVideoId(this.props.match.params.id || res.data.id)
-
+                return api.getVideoId(this.props.match.params.id || res.data[0].id)
             })
+            .catch(e => console.log("error", e))
+            
             .then(res => {
                 this.setState({
                     selectedVideo: res.data
-                })
+                });
             })
+            .catch(e => console.log("error", e));
     }
 
     componentDidUpdate(prevProps) {
 
-        // console.log(prevProps)
-        const currentId = prevProps.match.params.id || this.state.videoList[0].id;
+        const currentId = prevProps.match.params.id || this.state.videoList.id;
         const prevId = prevProps.match.params.id;
 
         if (prevId !== this.props.match.params.id) {
@@ -52,7 +52,6 @@ class Home extends Component {
         const newSelectedVideo = this.state.videos.find((video) => {
             return video.id === videoId;
         })
-        console.log(newSelectedVideo)
         this.setState({ selectedVideo: newSelectedVideo });
     }
 
@@ -62,12 +61,13 @@ class Home extends Component {
             return <div>Loading ...</div>
         }
 
-        // Filtering through videos to insure selected video doesn't run
+        // Filtering through videos to insure selected video doesn't show up in list
 
         const { videoList, selectedVideo } = this.state;
         const filteredVideos = videoList.filter((video) => {
             return video.id !== selectedVideo.id;
         })
+
         return (
             <>
                 <Video
