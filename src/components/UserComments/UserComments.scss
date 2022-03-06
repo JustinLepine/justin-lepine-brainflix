@@ -39,6 +39,10 @@
         font-size: 0.8rem;
         font-weight: 700;
         color: $brainflix-black;
+
+        @include tablet {
+            margin-bottom: -0.4rem;
+        }
     }
 
     &__time {
@@ -50,6 +54,11 @@
         margin-top: 0;
         font-size: 0.8rem;
         color: $primary-silver;
+
+        @include tablet {
+            margin-bottom: -0.4rem;
+            margin-left: auto;
+        }
 
         @include desktop{
             margin-right: 4%;
@@ -70,6 +79,7 @@
         color: $brainflix-black;
 
         @include tablet {
+            margin: 1% 0 3% 5%;
             font-size: 0.9rem;
         }
 

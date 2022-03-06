@@ -28,6 +28,13 @@
         max-width: 7rem;
         height: 4.3rem;
         border-radius: 8px;
+
+        @include tablet {
+            margin: 0.9rem 0;
+            min-width: 9rem;
+            max-width: 9rem;
+            height: 5rem;
+        }
     }
 
     &__info {
@@ -41,11 +48,19 @@
         font-weight: 700;
         margin: 4%;
         color: $brainflix-black;
+
+        @include tablet {
+            margin: 4% 10%;
+        }
     }
     
     &__author {
         font-size: 0.8rem;
         margin: 4%;
         color: $brainflix-black;
+
+        @include tablet {
+            margin: auto 10% 0;
+        }
     }
 }

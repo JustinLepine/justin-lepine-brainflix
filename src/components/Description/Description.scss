@@ -107,11 +107,14 @@
         border-top: 1px solid $primary-silver;
         
         @include tablet {
-            border: none;
+            margin-top: 0.2rem;
+            font-size: 0.91rem;
+            line-height: 1.4rem;
             order: 4;
         }
         
         @include desktop {
+            border: none;
             padding-right: 1rem;
         }
     }
