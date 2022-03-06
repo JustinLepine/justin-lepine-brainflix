@@ -13,7 +13,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        
+
         api.getVideo()
             .then(res => {
                 this.setState({
@@ -33,16 +33,18 @@ class Home extends Component {
 
     componentDidUpdate(prevProps) {
 
-        const currentId = prevProps.match.params.id || this.state.videoList.id;
+        const currentId = this.props.match.params.id || this.state.videoList[0].id;
         const prevId = prevProps.match.params.id;
 
         if (prevId !== this.props.match.params.id) {
+            
             api.getVideoId(currentId)
                 .then(res => {
                     this.setState({
                         selectedVideo: res.data
                     })
                 })
+
         }
     }
 
