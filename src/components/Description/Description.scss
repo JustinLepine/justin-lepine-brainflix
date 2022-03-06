@@ -26,7 +26,6 @@
     &__container {
         display: flex;
         flex-wrap: wrap;
-        margin: 0 4%;
         color: $primary-silver;
 
         @include tablet {
@@ -45,6 +44,7 @@
     }
 
     &__artist {
+        margin: 0.9rem 0 0rem;
         width: 50%;
         font-size: 0.9rem;
         font-weight: 700;
@@ -57,6 +57,7 @@
     }
 
     &__views {
+        margin: 0.8rem 0 0.5rem;
         width: 50%;
         color: $primary-silver;
         
@@ -66,6 +67,7 @@
     }
     
     &__dates {
+        margin: 0.8rem 0 0.5rem;
         width: 50%;
         color: $primary-silver;
         
@@ -78,6 +80,7 @@
     }
     
     &__likes {
+        margin: 0.8rem 0 0.5rem;
         width: 50%;
         color: $primary-silver;
         
@@ -92,21 +95,22 @@
 
     &__icons {
         width: 1.2rem;
-        padding: 0 0.4rem 0.5rem 0;
+        padding: 0 0.4rem 0rem 0;
     }
 
     &__text {
         font-size: 0.82rem;
-        margin-top: 0;
+        margin-bottom: 0rem;
         line-height: 1.1rem;
         padding-top: 1rem;
         color: $brainflix-black;
         border-top: 1px solid $primary-silver;
-
+        
         @include tablet {
+            border: none;
             order: 4;
         }
-
+        
         @include desktop {
             padding-right: 1rem;
         }

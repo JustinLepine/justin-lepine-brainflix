@@ -19,7 +19,7 @@ function Description({ selectedVideo }) {
                     <img src={likesIcon} className="description__icons" alt="likes-icon" />
                     <p className="description__likes">{selectedVideo.likes}</p>
                 </div>
-                <p className="description__text">{selectedVideo.text}</p>
+                <p className="description__text">{selectedVideo.description}</p>
             </div>
         </section>
     )

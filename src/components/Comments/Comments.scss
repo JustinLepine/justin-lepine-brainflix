@@ -9,6 +9,7 @@
     }
 
     &__count {
+        margin-top: 0rem;
         font-size: 0.9rem;
         color: $brainflix-black;
     }
@@ -39,8 +40,9 @@
     }
 
     &__form {
-        width: 14rem;
+        width: 100%;
         display: flex;
+        margin-left: 4%;
         flex-direction: column;
 
         @include tablet {
@@ -50,21 +52,22 @@
     }
 
     &__input {
-        margin-right: auto;
+        width: 91%;
+        margin: 0;
     }
 
     &__subtitle {
-        margin: 0 1.2rem 0.3rem 1rem;
+        margin: 0 1.2rem 0.3rem 0rem;
         font-weight: 400;
         color: $primary-silver;
     }
 
     &__text {
-        width: 12rem;
+        width: 94%;
         min-height: 5rem; 
         padding: 1rem;
-        padding-right: 0;
-        margin: 0 0rem 1rem 1rem;
+        // padding-right: 0;
+        margin: 0 6% 1rem 0rem;
         resize: none;
         outline: none;
         border-style: none;
@@ -86,8 +89,8 @@
     }
 
     &__button {
-        width: 13rem;
-        margin: 0 6%;
+        width: 97%;
+        margin: 0;
         padding: 0.6rem 0.2rem;
         display: flex;
         align-items: center;
