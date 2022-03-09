@@ -4,7 +4,7 @@ import Description from "../../components/Description/Description.js";
 import Comments from "../../components/Comments/Comments.js";
 import NextVideosSection from "../../components/NextVideosSection/NextVideosSection.js";
 import { Component } from "react";
-import api from '../../utils/tools'
+import tools from '../../utils/tools';
 
 class Home extends Component {
     state = {
@@ -14,12 +14,13 @@ class Home extends Component {
 
     componentDidMount() {
 
-        api.getVideo()
+        tools.getVideo()
             .then(res => {
                 this.setState({
                     videoList: res.data
                 });
-                return api.getVideoId(this.props.match.params.id || res.data[0].id)
+
+                return tools.getVideoId(this.props.match.params.id || res.data[0].id)
             })
             .catch(e => console.log("error", e))
             
@@ -38,7 +39,7 @@ class Home extends Component {
 
         if (prevId !== this.props.match.params.id) {
             
-            api.getVideoId(currentId)
+            tools.getVideoId(currentId)
                 .then(res => {
                     this.setState({
                         selectedVideo: res.data
@@ -58,7 +59,7 @@ class Home extends Component {
     }
 
     render() {
-
+        
         if (!this.state.selectedVideo) {
             return <div>Loading ...</div>
         }
