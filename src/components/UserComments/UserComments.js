@@ -6,7 +6,7 @@ function UserComments({ video }) {
         <ul className="user-comments">
             {video.map((video) => {
                 return (
-                    <li key={video.id}>
+                    <li key={video.timestamp}>
                         <div className="user-comments__feedback">
                             <div className="user-comments__icon"></div>
                             <div className="user-comments__box">
