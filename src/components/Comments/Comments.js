@@ -1,7 +1,9 @@
 import "./Comments.scss";
 import commentIcon from "../../assets/icons/add_comment.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
-import UserComments from "../UserComments/UserComments";
+import "../UserComments/UserComments.scss";
+// import UserComments from "../UserComments/UserComments";
+import tools from "../../utils/tools";
 import axios from "axios";
 
 function Comments({ videos, howManyComments }) {
@@ -27,15 +29,34 @@ function Comments({ videos, howManyComments }) {
                         <h5 className="comment__subtitle">JOIN THE CONVERSATION</h5>
                         <textarea htmlFor="comment" id="comment__text" className="comment__text" type="text" name="commentInput" placeholder="Add a new comment"></textarea>
                     </div>
-                    <div className="comment__button">
+                    <div onSubmit={submitHandler} className="comment__button">
                         <img src={commentIcon} className="comment__icon" alt="comment-icon" />
                         <a href="/" className="comment__upload">COMMENT</a>
                     </div>
                 </form>
             </div>
-            <UserComments
+
+            
+            <ul className="user-comments">
+            {videos.map((video) => {
+                return (
+                    <li key={video.timestamp}>
+                        <div className="user-comments__feedback">
+                            <div className="user-comments__icon"></div>
+                            <div className="user-comments__box">
+                                <h5 className="user-comments__name">{video.name}</h5>
+                                <p className="user-comments__time">{tools.formattedDate(video.timestamp)}</p>
+                                <p className="user-comments__message">{video.comment}</p>
+                            </div>
+                        </div>
+                    </li>
+                )
+            })}
+        </ul>
+
+            {/* <UserComments
                 video={videos}
-            />
+            /> */}
         </section>
     )
 }

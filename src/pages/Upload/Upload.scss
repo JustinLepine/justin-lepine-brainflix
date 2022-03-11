@@ -83,6 +83,8 @@
         @include tablet {
             width: 45%;
             align-self: flex-start;
+            padding-bottom: 2.1rem;
+            border-bottom: 1px solid $primary-silver;
         }
 
         @include desktop {

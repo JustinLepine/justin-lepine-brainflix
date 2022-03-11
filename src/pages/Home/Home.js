@@ -19,7 +19,6 @@ class Home extends Component {
                 this.setState({
                     videoList: res.data
                 });
-
                 return tools.getVideoId(this.props.match.params.id || res.data[0].id)
             })
             .catch(e => console.log("error", e))
@@ -45,7 +44,6 @@ class Home extends Component {
                         selectedVideo: res.data
                     })
                 })
-
         }
     }
 

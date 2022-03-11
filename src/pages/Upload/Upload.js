@@ -2,7 +2,6 @@ import React from 'react'
 import Sample from "../../assets/images/Upload-video-preview.jpg";
 import "./Upload.scss";
 import UploadInput from '../../components/UploadInput/UploadInput';
-import UploadButtons from '../../components/UploadButtons/UploadButtons';
 
 function Upload() {
   return (
@@ -17,7 +16,6 @@ function Upload() {
           <UploadInput />
         </div>
       </section>
-        <UploadButtons />
     </main>
   )
 }
