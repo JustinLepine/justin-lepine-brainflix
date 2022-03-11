@@ -4,21 +4,8 @@ import avatar from "../../assets/images/Mohan-muruge.jpg";
 import "../UserComments/UserComments.scss";
 // import UserComments from "../UserComments/UserComments";
 import tools from "../../utils/tools";
-import axios from "axios";
 
 function Comments({ videos, howManyComments }) {
-
-    const submitHandler = (e) => {
-        e.preventDefault();
-
-        axios
-            .post("/videos", {
-                name: "user",
-                comments: e.taget.comment.value,
-                timestamp: Date.now()
-            });
-    }
-
     return (
         <section className="comment">
             <h3 className="comment__count">{howManyComments} Comments</h3>
