@@ -11,12 +11,12 @@ function Comments({ videos, howManyComments }) {
             <h3 className="comment__count">{howManyComments} Comments</h3>
             <div className="comment__container">
                 <img src={avatar} className="comment__avatar" alt="avatar-icon" />
-                <form onSubmit={submitHandler} id="form__add" className="comment__form">
+                <form id="form__add" className="comment__form">
                     <div className="comment__input">
                         <h5 className="comment__subtitle">JOIN THE CONVERSATION</h5>
                         <textarea htmlFor="comment" id="comment__text" className="comment__text" type="text" name="commentInput" placeholder="Add a new comment"></textarea>
                     </div>
-                    <div onSubmit={submitHandler} className="comment__button">
+                    <div className="comment__button">
                         <img src={commentIcon} className="comment__icon" alt="comment-icon" />
                         <a href="/" className="comment__upload">COMMENT</a>
                     </div>

@@ -23,7 +23,7 @@ function UploadInput() {
                 comments: e.taget.inputDesc.value,
             })
             .then(res => {
-                res.status(201).send(newVideo)
+                res.status(201)
             })
             .catch(err => {
                 console.log(err)
