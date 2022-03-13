@@ -2,9 +2,7 @@ import React from 'react'
 import publishIcon from "../../assets/icons/publish.svg";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
-
 import "./UploadInput.scss";
-import "../UploadButtons/UploadButtons.scss"
 
 function UploadInput() {
 

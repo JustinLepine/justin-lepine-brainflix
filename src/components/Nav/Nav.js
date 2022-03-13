@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 function Nav() {
     return (
         <nav className="nav">
-
             <Link to="/">
                 <img src={logo} className="nav__logo" alt="brainflix-logo" />            
             </Link>
