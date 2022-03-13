@@ -37,6 +37,11 @@
         border-radius: 5px;
         height: 1rem;
 
+        &:focus {
+            outline: none!important;
+            border: solid 1px $brainflix-blue;
+        }
+
         @include tablet {
             margin: 0.2rem 5%;
         }
@@ -55,6 +60,11 @@
         border-color: $primary-silver;
         background-color: $secondary-alabaster;
         border-radius: 5px;
+
+        &:focus {
+            outline: none!important;
+            border: solid 1px $brainflix-blue;
+        }
 
         @include tablet {
             margin: 0.2rem 5%;

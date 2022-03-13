@@ -1,36 +1,27 @@
 import React from 'react'
 import publishIcon from "../../assets/icons/publish.svg";
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 import "./UploadInput.scss";
 import "../UploadButtons/UploadButtons.scss"
 
 function UploadInput() {
 
+    const history = useHistory()
+
     const submitHandler = (e) => {
         e.preventDefault();
 
         axios
             .post("/videos", {
-                title: e.target.input.value,
-                channel: "Best Video Ever",
-                image: "./public/images/image",
-                description: "This video has the best activies ever",
-                views: "999,999",
-                likes: 125,
-                video: "https://project-2-api.herokuapp.com/stream",
-                timestamp: Date.now(),
-                comments: e.taget.inputDesc.value,
+                title: e.target.inputTitle.value,
+                comments: e.target.inputDesc.value,
             })
             .then(res => {
-                res.status(201)
-            })
-            .catch(err => {
-                console.log(err)
-                err.status(404)
+                history.push(`/videos/${res.data}`)
             })
     }
-
 
     return (
         <form onSubmit={submitHandler} className="upload-input">
@@ -43,10 +34,10 @@ function UploadInput() {
             <div className="upload-buttons">
                 <div className="upload-buttons__button">
                     <img src={publishIcon} className="upload-buttons__icon" alt="publish-icon" />
-                    <a href="/" className="upload-buttons__publish">PUBLISH</a>
+                    <button className="upload-buttons__publish">PUBLISH</button>
                 </div>
                 <div className="upload-buttons__cancel-button">
-                    <a href="/" className="upload-buttons__cancel">CANCEL</a>
+                    <button className="upload-buttons__cancel">CANCEL</button>
                 </div>
             </div>
         </form>

@@ -2,7 +2,6 @@ import "./Comments.scss";
 import commentIcon from "../../assets/icons/add_comment.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import "../UserComments/UserComments.scss";
-// import UserComments from "../UserComments/UserComments";
 import tools from "../../utils/tools";
 
 function Comments({ videos, howManyComments }) {
@@ -22,28 +21,22 @@ function Comments({ videos, howManyComments }) {
                     </div>
                 </form>
             </div>
-
-            
             <ul className="user-comments">
-            {videos.map((video) => {
-                return (
-                    <li key={video.timestamp}>
-                        <div className="user-comments__feedback">
-                            <div className="user-comments__icon"></div>
-                            <div className="user-comments__box">
-                                <h5 className="user-comments__name">{video.name}</h5>
-                                <p className="user-comments__time">{tools.formattedDate(video.timestamp)}</p>
-                                <p className="user-comments__message">{video.comment}</p>
+                {videos.map((video) => {
+                    return (
+                        <li key={video.timestamp}>
+                            <div className="user-comments__feedback">
+                                <div className="user-comments__icon"></div>
+                                <div className="user-comments__box">
+                                    <h5 className="user-comments__name">{video.name}</h5>
+                                    <p className="user-comments__time">{tools.formattedDate(video.timestamp)}</p>
+                                    <p className="user-comments__message">{video.comment}</p>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                )
-            })}
-        </ul>
-
-            {/* <UserComments
-                video={videos}
-            /> */}
+                        </li>
+                    )
+                })}
+            </ul>
         </section>
     )
 }
