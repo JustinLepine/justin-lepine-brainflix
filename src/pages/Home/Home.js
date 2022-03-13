@@ -32,7 +32,7 @@ class Home extends Component {
     }
 
     componentDidUpdate(prevProps) {
-
+        window.scrollTo(0, 0)
         const currentId = this.props.match.params.id || this.state.videoList[0].id;
         const prevId = prevProps.match.params.id;
 
