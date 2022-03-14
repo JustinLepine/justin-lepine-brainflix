@@ -14,10 +14,10 @@ function UploadInput() {
         axios
             .post("/videos", {
                 title: e.target.inputTitle.value,
-                comments: e.target.inputDesc.value,
+                description: e.target.inputDesc.value,
             })
             .then(res => {
-                history.push(`/videos/${res.data}`)
+                history.push(`/videos/${res.data.id}`)
             })
     }
 
