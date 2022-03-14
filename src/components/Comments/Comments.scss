@@ -127,3 +127,90 @@
         color: $primary-white;
     }
 }
+
+.user-comments {
+    list-style: none;
+    padding: 0;
+
+    &__icon {
+        width: 2.8rem;
+        height: 2.8rem;
+        margin-top: 2rem;
+        margin-top: 0;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: 10% 100%;
+        background: $secondary-mercury;
+
+        @include tablet {
+            margin-top: 1rem;
+        }
+    }
+
+    &__feedback {
+        line-height: 2rem;
+        font-weight: 700;
+        display: flex;
+        margin-top: 1rem;
+        border-bottom: 1px solid $primary-silver;
+    }
+    
+    &__name {
+        width: 50%;
+        display: flex;
+        align-items: flex-start;
+        margin-left: 5%;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: $brainflix-black;
+
+        @include tablet {
+            margin-bottom: -0.4rem;
+        }
+    }
+
+    &__time {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 41%;
+        margin-bottom: 0;
+        margin-top: 0;
+        font-size: 0.8rem;
+        color: $primary-silver;
+
+        @include tablet {
+            margin-bottom: -0.4rem;
+            margin-left: auto;
+        }
+
+        @include desktop{
+            margin-right: 4%;
+        }
+    }
+
+    &__box {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__message {
+        margin-top: 3%;
+        margin-left: 5%;
+        line-height: 1.3rem;
+        font-size: 0.85rem;
+        color: $brainflix-black;
+
+        @include tablet {
+            margin: 1% 0 3% 5%;
+            font-size: 0.9rem;
+        }
+
+        @include desktop{
+            margin-right: 4%;
+        }
+    }
+}

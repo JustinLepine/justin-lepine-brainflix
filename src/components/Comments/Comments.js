@@ -1,7 +1,6 @@
 import "./Comments.scss";
 import commentIcon from "../../assets/icons/add_comment.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
-import "../UserComments/UserComments.scss";
 import tools from "../../utils/tools";
 
 function Comments({ videos, howManyComments }) {

@@ -45,12 +45,12 @@
 
         @include tablet {
             padding-left: 0.625rem;
-            width: 85vw;
+            width: 87.5vw;
             margin: 0.2rem 0 0.2rem 5%;
         }
 
         @include desktop {
-            width: 91%;
+            width: 91.5%;
         }
     }
     
@@ -71,12 +71,15 @@
         }
 
         @include tablet {
-            padding-left: 0.625rem;
+            width: 87.5vw;
+            padding: 0.625rem;
             margin: 0.2rem 5%;
         }
 
         @include desktop {
-            width: 90%;
+            width: 91.5%;
+            min-height: 5.2rem;
+            margin-bottom: 0.18rem;
         }
     }    
 }

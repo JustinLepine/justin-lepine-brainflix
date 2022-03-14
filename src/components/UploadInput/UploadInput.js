@@ -17,6 +17,7 @@ function UploadInput() {
                 description: e.target.inputDesc.value,
             })
             .then(res => {
+                console.log(res.data.id)
                 history.push(`/videos/${res.data.id}`)
             })
     }
